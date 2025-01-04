@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2024 sakito <sakito@sakito.com>
+"""
+pytest ラッパ
+"""
+
+import os
+import sys
+
+import pytest
+
+# プロジェクトディレクトリ取得
+PRJ_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+sys.path[0:0] = [
+    f'{PRJ_DIR}/..',
+]
+
+
+if __name__ == '__main__':
+    sys.exit(pytest.console_main())

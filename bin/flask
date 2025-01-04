@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2024 sakito <sakito@sakito.com>
+"""
+flask ラッパ
+"""
+
+import sys
+
+import flask.cli
+
+if __name__ == '__main__':
+    sys.exit(flask.cli.main())
