@@ -1,5 +1,8 @@
 .DEFAULT_GOAL := all
 
+.PHONY: all
+all: format lint typecheck
+
 .PHONY: format
 format:
 	uv run ruff format
@@ -18,5 +21,10 @@ typecheck:
 test:
 	uv run pytest
 
-.PHONY: all
-all: format lint typecheck
+.PHONY: uwsgi
+uwsgi:
+	bash scripts/build_uwsgi.sh
+
+.PHONY: nginx
+nginx:
+	bash scripts/build_nginx.sh
