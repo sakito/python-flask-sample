@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2024 sakito <sakito@sakito.com>
+"""
+supervisord ラッパ
+
+supervisord --help
+
+bin/supervisord
+"""
+import sys
+from pathlib import Path
+
+import supervisor.supervisord
+
+prj_dir = (Path(__file__).parent / '..').resolve()
+
+sys.argv.extend(['-c', f'{prj_dir}/conf/supervisord.conf'])
+
+if __name__ == '__main__':
+    sys.exit(supervisor.supervisord.main())
