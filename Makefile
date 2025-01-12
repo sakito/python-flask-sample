@@ -21,10 +21,10 @@ typecheck:
 test:
 	uv run pytest
 
-.PHONY: uwsgi
-uwsgi:
+.PHONY: build_uwsgi
+build_uwsgi:
 	bash scripts/build_uwsgi.sh
 
-.PHONY: nginx
-nginx:
+.PHONY: build_nginx
+build_nginx:
 	bash scripts/build_nginx.sh
