@@ -4,9 +4,19 @@
 
 from flask import Flask
 
-app = Flask(__name__)
+from ui.view import (
+    # test はデバッグ、テンプレート用
+    view_test,
+)
 
-@app.route('/')
-def hello_world():
-    return '<p>Hello, World! 確認用画面</p>'
+app = Flask(__name__,
+            static_url_path='/static',
+            template_folder='template',
+            static_folder='static')
+
+
+# モジュール登録
+PREFIX = '/ui'
+app.register_blueprint(view_test.app, url_prefix=PREFIX)
+# test は挙動確認用view
 
