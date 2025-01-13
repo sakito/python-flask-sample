@@ -9,7 +9,7 @@ cd nginx-${var_info};
 ./configure \
     --prefix=${HOME}/opt/nginx/${var_info} \
     --conf-path=${HOME}/opt/nginx/${var_info}/conf/nginx.conf \
-    --error-log-path=${HOME}/opt/${var_info}/nginx/var/log/nginx-error.log \
+    --error-log-path=${HOME}/opt/nginx/${var_info}/var/log/nginx-error.log \
     --http-log-path=${HOME}/opt/nginx/${var_info}/var/log/nginx-access.log \
     --pid-path=${HOME}/opt/nginx/${var_info}/var/run/nginx.pid \
     --lock-path=${HOME}/opt/nginx/${var_info}/var/lock/nginx.lock \
