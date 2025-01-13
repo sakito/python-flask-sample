@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2025 sakito <sakito@sakito.com>
+"""
+waitress-serve ラッパ
+"""
+import sys
+
+import waitress.runner
+
+if __name__ == '__main__':
+    sys.exit(waitress.runner.run())

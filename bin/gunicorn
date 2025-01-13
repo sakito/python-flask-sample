@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2025 sakito <sakito@sakito.com>
+"""
+gunicorn ラッパ
+"""
+import sys
+
+import gunicorn.app.wsgiapp
+
+if __name__ == '__main__':
+    sys.exit(gunicorn.app.wsgiapp.run())
