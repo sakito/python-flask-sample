@@ -17,6 +17,6 @@ app = Flask(__name__,
 
 # モジュール登録
 PREFIX = '/ui'
-app.register_blueprint(view_test.app, url_prefix=PREFIX)
-# test は挙動確認用view
 
+# test は挙動確認用view
+app.register_blueprint(view_test.app, url_prefix=PREFIX)

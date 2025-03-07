@@ -14,5 +14,7 @@ app = flask.Flask(__name__)
 
 api_version = 'v1'
 # モジュール登録
+
+# test は挙動確認用
 app.register_blueprint(api_test.app, url_prefix=f'/api/{api_version}')
 
