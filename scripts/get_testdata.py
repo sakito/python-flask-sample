@@ -12,6 +12,7 @@ bin/py get_testdata.py
 """
 import os
 import urllib.request
+import gzip
 
 
 class Tool:
@@ -33,11 +34,22 @@ class Tool:
             with open(save_path, mode='wb') as f:
                 f.write(data)
 
+    def save_db_nvd(self, year='2024'):
+        """
+        nvdデータを保存する
+        """
+        file_path = f'data/nvdcve-1.1-{year}.json.gz'
+        with gzip.open(file_path, 'rt', encoding='utf_8') as f:
+            for line in f:
+                print(line)
+
+
     def run(self):
         """
         起動点
         """
-        self.dl_nvd()
+        # self.dl_nvd()
+        self.save_db_nvd()
 
 
 def main():
