@@ -1,0 +1,3 @@
+[submodule "src/util"]
+	path = src/util
+	url = ssh://git@github.com/sakito/python-sample-junk.git
