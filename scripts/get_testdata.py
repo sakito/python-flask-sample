@@ -33,7 +33,7 @@ def cli(ctx: click.core.Context) -> None:
 
 @cli.command(name='get', help='データ収集')
 @click.option('--year', default='2024', help='年')
-def run(year: str='2024') -> None:
+def get(year: str='2024') -> None:
     """
     データを取得する
 
@@ -76,6 +76,7 @@ def run(year: str='2024') -> None:
 
             result = model.VuResult(
                 uid=uid,
+                year=year,
                 value=json_util.dump_json(line),
             )
             session.add(result)
@@ -100,7 +101,7 @@ def build(year: str='2024') -> None:
 
     vu = aliased(model.VuResult, name='vu')
 
-    stmt = select(vu).order_by(vu.uid)
+    stmt = select(vu).where(vu.year==year).order_by(vu.uid)
     for row in session.execute(stmt):
         line = json_util.load_json(row.vu.value)
 

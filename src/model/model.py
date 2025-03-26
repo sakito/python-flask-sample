@@ -12,4 +12,5 @@ class VuResult(Base):
     __tablename__ = 'vuresult'
 
     uid = db.Column(db.String, primary_key=True)
+    year = db.Column(db.String)
     value = db.Column(db.Unicode)
