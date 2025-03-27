@@ -107,6 +107,3 @@ def build(year: str='2024') -> None:
 
         print(line.keys())
 
-
-if __name__ == '__main__':
-    cli()
